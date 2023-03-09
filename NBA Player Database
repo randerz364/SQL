@@ -1,3 +1,4 @@
+--Create a Table 
 CREATE TABLE players(
    Player            TEXT,
    Team              TEXT,
