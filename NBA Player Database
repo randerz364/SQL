@@ -1,4 +1,4 @@
---Create a Table 
+--Create a NBA Player Database
 CREATE TABLE players(
    Player            TEXT,
    Team              TEXT,
@@ -40,8 +40,10 @@ INSERT INTO players(Player,Team,Conference,Date,Position,Height,Weight,Age,Draft
 INSERT INTO players(Player,Team,Conference,Date,Position,Height,Weight,Age,Draft_Year,Seasons_in_league,Season,Season_short,Predraft_Team,Real_value,Height_CM,Weight_KG,Last_Season) VALUES ('Dennis Schroder','Oklahoma City Thunder','West','Dec 23, 2019','PG','6''1',172,26,2013,6,'2019-2020',2020,'Basketball Lowen Braunschweig (Germany)',0.5,185,78,1);
 INSERT INTO players(Player,Team,Conference,Date,Position,Height,Weight,Age,Draft_Year,Seasons_in_league,Season,Season_short,Predraft_Team,Real_value,Height_CM,Weight_KG,Last_Season) VALUES ('Bam Adebayo','Miami Heat','East','Dec 16, 2019','C','6''10',255,22,2017,2,'2019-2020',2020,'Kentucky',0.5,208,115,1);
 
+--What players were drafted by the Boston Celtics after the year 2000?
 SELECT * FROM players WHERE Team = 'Boston Celtics' AND Draft_year > 2000;
 
+--Which players are considered veterans?
 SELECT Player,
 CASE
 WHEN Seasons_in_league > 7 THEN 'Veteran'
@@ -49,4 +51,5 @@ ELSE 'Not a veteran'
 END AS 'Veteran_Status' FROM Players
 GROUP BY Player;
 
+--What is the average height of the players?
 SELECT Height_CM, ROUND(AVG(Height_CM)) AS 'Avg_Player_Height' FROM Players;
