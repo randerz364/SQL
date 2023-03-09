@@ -17,7 +17,7 @@ INSERT INTO Store VALUES (13, "yellow and orange striped shirt", 6, "nylon", "S 
 INSERT INTO Store VALUES (14, "silver shirt", 15, "silk", "S M L");
 INSERT INTO Store VALUES (15, "gold shirt", 15, "silk", "S M L");
 
---display date organized by price
+--display data organized by price
 SELECT * FROM Store
 ORDER BY PRICE asc;
 
